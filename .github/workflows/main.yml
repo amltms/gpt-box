@@ -35,7 +35,7 @@ jobs:
 
     - name: Deploy to Raspberry Pi
       run: |
-        ssh -o StrictHostKeyChecking=no amltms@${{ secrets.PI_IP }} "\
+        ssh -v -o StrictHostKeyChecking=no amltms@${{ secrets.PI_IP }} "\
           docker pull ${{ secrets.DOCKER_USERNAME }}/gpt-box:latest && \
           docker stop gpt-box-app || true && \
           docker rm gpt-box-app || true && \
